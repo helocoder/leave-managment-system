@@ -11,8 +11,8 @@ if(isset($_POST["loglogin"]))
      $username = $_POST["logusrname"];
      $password = $_POST["logpassword"];
 
-   
-     
+      
+
 
 }
 
