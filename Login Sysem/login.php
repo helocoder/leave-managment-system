@@ -44,9 +44,10 @@
      </button>
 
      
-<div class="newuser" style = "padding : 10px;
-hover{color:#1260CC};">
-<pre><a href = "Login Sysem\signup.php" class = "link-secondary text-opacity-0" style="text-decoration: none;"> New join? Signup </pre>
+<div class="newuser" style = "padding : 10px;">
+
+<pre><a href = "Login Sysem\signup.php" class = "link-secondary text-opacity-0" style="text-decoration: none;" onMouseOver="this.style.color='#0d6efd'"
+        onMouseOut="this.style.color='grey'"> New join? Signup </pre>
 </div>
 
 </form>
