@@ -6,24 +6,26 @@ global $conn;
  $password = "";
  $cpassword = "";
 
+ $role  = false;
+
       //connection.....//  
    require 'conn.php';
 
 
  if(isset($_POST["signup"]))
  {
-
-
-     if(isset($_POST["btnemp"]))
-     {
-         $name = $_POST["nam"];
+        $name = $_POST["nam"];
          $username = $_POST["usrname"];
          $password = $_POST["password"];
          $cpassword = $_POST["cpassword"];
 
+     if(isset($_POST["btnemp"]))
+     {
+         $role = true;
+
          if($password == $cpassword)
          {
-             $sql = "INSERT INTO `employee` (`id`, `name`, `email`, `password`) VALUES (NULL, '$name', '$username', '$password')";
+             $sql = "INSERT INTO `user` (`id`, `name`, `email`, `password`,`role`) VALUES (NULL, '$name', '$username', '$password','$role')";
              $result = mysqli_query($conn,$sql);
         }
             else{
@@ -33,25 +35,21 @@ global $conn;
             
     }
         
-        // Admin table //
+        // Admin //
         
-        if(isset($_POST["btnadm"]))
+        else if(isset($_POST["btnadm"]))
         {
-            $name = $_POST["nam"];
-            $username = $_POST["usrname"];
-            $password = $_POST["password"];
-            $cpassword = $_POST["cpassword"];
-            
+            $role = false;
+
             if($password == $cpassword)
             {
-                $sql = "INSERT INTO `admin` (`id`, `name`, `email`, `password`) VALUES (NULL, '$name', '$username', '$password')";
+                $sql = "INSERT INTO `user` (`id`, `name`, `email`, `password`,`role`) VALUES (NULL, '$name', '$username', '$password','$role')";
                 $result = mysqli_query($conn,$sql);
             }
             else{
                  echo "Enter Same Password";
                  echo "<br>";
                 }
-   
 
         }
         else{
