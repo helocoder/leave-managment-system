@@ -12,27 +12,31 @@ if(isset($_POST["loglogin"]))
      $password = $_POST["logpassword"];
      
      $sql = "select * from user where email = '$username' and password = '$password' " ;
-     $result = mysqli_query($conn,$result);
+     $result = mysqli_query($conn,$sql);
      
-     $row = mysqli_nums_rows($result);
-     if($row>0)
+     $num = mysqli_num_rows($result);
+     $row = mysqli_fetch_assoc($result);
+     if($num>0)
      {
-         $sql_role = "select role from user where email = '$email' and password = '$password'";
+         $sql_role = "select role from user where email = '$username' and password = '$password'";
 
          
-         if($sql2 == 0)
+         if($sql_role == 0)
          {
 
-             echo "Hello"..
+             echo "Hello ".$row['name']." (Admin)";
 
          }
-        echo "user found "
+         else 
+         {
 
-
-
-
-
+             echo "Hello ".$row['name']." (Employee)";
+         }  
      }
+       else {
+             echo "user not found ";
+             echo "<br>";
+            }   
 
 
 }
