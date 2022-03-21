@@ -23,30 +23,30 @@
      margin-top : 30px;
      "> Login Page </h1>
 
-     <form action="Db\login-valid.php"  method="POST" style="display: flex;
+     <form action="login-valid.php"  method="POST" style="display: flex;
     flex-direction: column;
     align-items: center;
     margin-top:75px">
  
    <div class="mb-3 col-md-6" >
-    <label for="usrname" class="form-label">Username</label>
-    <input type="email" class="form-control" id="usrname" name="usrname">
+    <label for="logusrname" class="form-label">Username</label>
+    <input type="email" class="form-control" id="logusrname" name="logusrname">
   
   </div>
 
 
   <div class="mb-3 col-md-6">
-    <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control" id="password" name = "password">
+    <label for="logpassword" class="form-label">Password</label>
+    <input type="password" class="form-control" id="logpassword" name = "logpassword">
   </div>
 
-  <button type="submit" class="btn btn-primary col-md-6" name = "login">Login
+  <button type="submit" class="btn btn-primary col-md-6" name = "loglogin">Login
      </button>
 
      
 <div class="newuser" style = "padding : 10px;">
 
-<pre><a href = "Login Sysem\signup.php" class = "link-secondary text-opacity-0" style="text-decoration: none;" onMouseOver="this.style.color='#0d6efd'"
+<pre><a href = "signup.php" class = "link-secondary text-opacity-0" style="text-decoration: none;" onMouseOver="this.style.color='#0d6efd'"
         onMouseOut="this.style.color='grey'"> New join? Signup </pre>
 </div>
 
