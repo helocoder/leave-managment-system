@@ -21,7 +21,7 @@ if(isset($_POST["loglogin"]))
          $sql_role = "select role from user where email = '$username' and password = '$password'";
 
          
-         if($sql_role == 0)
+         if($sql_role == false)
          {
 
              echo "Hello ".$row['name']." (Admin)";
@@ -30,7 +30,7 @@ if(isset($_POST["loglogin"]))
          else 
          {
 
-             echo "Hello ".$row['name']." (Employee)";
+             echo "Hello ".$row['name']." (emp)";
          }  
      }
        else {
