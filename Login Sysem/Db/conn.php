@@ -15,27 +15,38 @@
   </head>
   <body>
     <!-- connection page............................................... -->
+
   <?php
+
+
+echo '<script langauge ="javascript">
+ $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+    $("#success-alert").slideUp(300);
+  });
+</script>';
 
 $conn = mysqli_connect("localhost","root","","lms");
 
 if(isset($conn))
 {
-     echo '<div class="alert alert-success
-      alert-dismissible fade show" role="alert">
-     <strong>SuckSEX:) </strong> ready for Proceed.
-     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-   </div>';
+  //    echo '<div class="alert alert-success
+  //     alert-dismissible fade show" role="alert" id="success-alert">
+  //    <strong>Success:) </strong> ready for Proceed.
+  //    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  //  </div>';
 
 }
 else{
-     echo '<div class="alert alert-danger
-      alert-dismissible fade show" role="alert">
-     <strong>Connection failed</strong>
-     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-   </div>';
+  //    echo '<div class="alert alert-danger
+  //     alert-dismissible fade show" role="alert" id="success-alert">
+  //    <strong>Connection failed :(</strong>
+  //    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  //  </div>';
 }
 ?>
+
+
+
 
     <!-- connection page............................................... -->
 

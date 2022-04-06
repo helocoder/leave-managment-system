@@ -53,7 +53,7 @@ global $conn;
 
         }
         else{
-            echo " Selct Your Role :( ";
+            echo " Select Your Role :( ";
             echo "<br>";
         }
  
