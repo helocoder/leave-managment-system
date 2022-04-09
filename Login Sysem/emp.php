@@ -24,79 +24,80 @@
 <div class="container">
     <div class="card">
         <div class="parent">
-            <div class ="top-div">
-                <h3>Few step far......<h3>
-                <!-- <?php
-                echo'
-                <h3><$_SESSION[loguser] </h3>';
-                ?> -->
-            </div>
-            <ul class="progress-bar">
-                <li class="active"></li>
-                <li></li>
-                <li></li>
-                <!--<li></li>-->
-            </ul>
-        </div>
+<form method="post">
 
-        <div class="main active">
-            
-            <div class="content">
-                <h4>Welcome!</h4>
-                
-                <div class="input-text"> <input type="text" placeholder="IT , Marketing , SDE" id="full-name" name = "depart" require> <span>Which Department ?</span> </div>
+    <ul class="progress-bar">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <!--<li></li>-->
+    </ul>
+</div>
+
+<div class="main">
+    
+    <div class="content">
+        <h4>Welcome!</h4>
+   
+    
+    <div class="input-text"> <input type="text" placeholder="IT , Marketing , SDE" id="full-name" name = "depart" require> <span>Which Department ?</span> </div>
                   <br> 
-                <div class="date-grp">
-                <form action="emp.php" method="POST">       
-                    <h6>From date</h6>
+                  <div class="date-grp">
+                      <h6>From date</h6>
                     <div class="input-group date" data-provide="datepicker" id='datetimepicker1'>
                         <input type="date" class="form-control" name = "date-from">
                         <div class="input-group-addon">
                             </div>
                         </div>
                         
-                       <h6>To date</h6>
+                        <h6>To date</h6>
                         <div class="input-group date" data-provide="datepicker" id='datetimepicker2'>
                             <input type="date" class="form-control" name = "date-to">
                             <div class="input-group-addon">
                                 </div>
                             </div>
-                 </div>
+                        </div>
+                        
+                    </div>
+                    
+                </form>
+                    <div class="button"> <button class="create-workspace"name="save1">Save</button> </div>
+                </div>
+                
+   
+            <form method="post">
 
-            </div>
-     </form>
-            <div class="button"> <button class="create-workspace"name="save1">Save</button> </div>
-        </div>
-        
-        <div class="main">
-            <div class="content">
-                <h4>Select days for leave</h4>
+                <div class="main">
+                    <div class="content">
+                        <h4>Select days for leave</h4>
             </div>
             <br>
-             <form action="emp.php" method="POST">       
+            
             <input type="number" class="form-control col-3" id="exampleInputEmail1" aria-describedby="emailHelp">  Days
-            </form>
+                 </form>
             <div class="button button_gap"> <button class="back-click">Back</button> <button class="next-click" name="save2">Next</button> </div>
         </div>
+        <form method="post">
+
         <div class="main">
             <div class="content">
                 <h4>Leave Type</h4>
-                            <form action="emp.php" method="POST"> 
-                  <input type="text" class="form-control col-3" name = "leave-typ"id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <br>
-                  <h4>Leave Reason</h4>
-                  <textarea type="text" class="form-control col-3 " style="resize:none;" rows="4" cols="35" name = "leave-rsn"id="exampleInputEmail1" aria-describedby="emailHelp"></textarea>
+                <input type="text" class="form-control col-3" name = "leave-typ"id="exampleInputEmail1" aria-describedby="emailHelp">
+                <br>
+                <h4>Leave Reason</h4>
+                <textarea type="text" class="form-control col-3 " style="resize:none;" rows="4" cols="35" name = "leave-rsn"id="exampleInputEmail1" aria-describedby="emailHelp"></textarea>
             </div>
      <!-- dropdown start -->
   
      <!-- dropdown closed -->
+
     </form>
+     
+     <div class="button button_gap1"> <button class="back-click">Back</button> <button class="finish-click">Finish</button> </div>
+    </div>
+     <form method="post">
 
-
-
-            <div class="button button_gap1"> <button class="back-click">Back</button> <button class="finish-click">Finish</button> </div>
-        </div>
-        <div class="main"> <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+    <div class="main-active"> <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
                 <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
                 <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /> </svg>
             <div class="content">
@@ -105,13 +106,12 @@
                     Hope u will get your leave as soon as possible :) 
                 </p>
             </div>
-     <form action="emp.php" method="POST">       
-
-            <div class="button launch"> <button name="logout">Logout</button> </div>
-    </form>       
-
+    </form>
+            
+            <div class="button launch"> <button name="logout">Logout</button> </div>       
+            
         </div>
-
+  
     </div>
 
 </div>
@@ -126,7 +126,8 @@
 <?php
 if(isset($_POST["logout"]))
 {
-     header("Location:C:\xampp\htdocs\proj\PHP\Login Sysem\logout.php");
+    
+    //header("Location:login.php");
      exit();
 }
 

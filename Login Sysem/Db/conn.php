@@ -19,11 +19,11 @@
   <?php
 
 
-echo '<script langauge ="javascript">
- $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-    $("#success-alert").slideUp(300);
-  });
-</script>';
+// echo '<script langauge ="javascript">
+//  $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+//     $("#success-alert").slideUp(300);
+//   });
+// </script>';
 
 $conn = mysqli_connect("localhost","root","","lms");
 
