@@ -52,7 +52,7 @@ if(isset($_POST["loglogin"]))
          {
 
              echo "Hello ".$row['name']." (admin)";
-              header("Location: emp.php");
+              header("Location: empp2.php");
               exit();
 
          }  
