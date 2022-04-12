@@ -22,8 +22,7 @@ global $conn;
    $sql = "INSERT INTO `leave` (`id`, `name`, `from`, `to`,`reson`) VALUES (NULL, '$name', '$from', '$to','$reason')";
    $result = mysqli_query($conn,$sql);
 
-   echo "data inserted";
-   require 'logout.php';
+  require 'logout.php';
 
 
 
