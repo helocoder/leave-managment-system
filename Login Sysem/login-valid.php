@@ -40,7 +40,7 @@ if(isset($_POST["loglogin"]))
          $roll=$row['role'];
          //echo "$roll";
 
-         if($roll == true)
+         if($roll == 0)
          {
 
              echo "Hello ".$row['name']." (admin)";
@@ -66,14 +66,6 @@ if(isset($_POST["loglogin"]))
 
 
 ?>  
-
-
-
-
-
-
-
-
 
 
     <!-- Optional JavaScript; choose one of the two! -->

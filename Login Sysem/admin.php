@@ -1,21 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <title>Admin Page</title>
-  </head>
-  <body>
-      <div class="container">
-
-          <h1 style="color:blue;">Admin Page</h1>
-          <?php
+    <?php
           ob_start();
+
        
      require_once 'process.php';
      $sql = "SELECT * FROM `leave` WHERE `id` > 0";
@@ -35,22 +20,27 @@
         </div>';
      }
      
-
-     
     
      else if(isset($_GET['accept']))
-     {
+     { 
+         error_reporting(E_ALL|E_STRICT);
+         ini_set('display_errors', 1);
+         echo 'I am : ' . `whoami`;
+         
+         $to_email = "vaidyaabhi3@gmail.com";
+         $subject = "Simple Email Test via PHP";
+         $body = "Hi, This is test email send by PHP Script";
+         $headers = "From: hellocoder123@gmail.com";
         
          //the message //
       //  $msg = "Congratulation '$row['name']'\n Your leave is approved from $row['from'] to $row['to']\n see you soon :)";
         
-        $msg = "Congratulation leave approved :)";
-
-        // use wordwrap() if lines are longer than 70 characters
-        $msg = wordwrap($msg,70);
-
-        // send email
-        mail('hellocoder123@gmail.com','Action on Leave','$msg','From: vaidyaabhi3@gmail.com');
+           
+            if (mail($to_email, $subject, $body, $headers)) {
+                echo "Email successfully sent to $to_email...";
+            } else {
+                echo "Email sending failed...";
+            }
 
         //Drop from table after 
         //  $id = $_GET['accept'];
@@ -67,6 +57,23 @@
      
 
     ?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Admin Page</title>
+  </head>
+  <body>
+      <div class="container">
+
+          <h1 style="color:blue;">Admin Page</h1>
+
     <!-- --------------------------TABLE ------------------------>
     <div class="row justify-content-center">
         <table class="table">

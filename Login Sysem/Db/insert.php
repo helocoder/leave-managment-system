@@ -1,4 +1,5 @@
 <?php
+    ob_start();
 
 global $conn;
  $name = "";
@@ -56,6 +57,17 @@ global $conn;
             echo " Select Your Role :( ";
             echo "<br>";
         }
+
+
+
+      sleep(3);
+      require '../login.php';
+
+
+      header("Location: ../login.php");
+      exit();
+      ob_flush();
+     
  
 }
 

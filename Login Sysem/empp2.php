@@ -7,8 +7,7 @@ global $conn;
  $to="";
  $reason="";
  $email="";
-
-    echo "data ";  
+ 
    if (isset($_POST['log']))
    {
    echo "inserted";
@@ -24,13 +23,8 @@ global $conn;
 
   require 'logout.php';
 
-
-
   }
 
-  else{
-    echo "Not working";
-  }
 
 ?>
 
@@ -46,7 +40,7 @@ global $conn;
   </head>
   <body>
     <form action="empp2.php" class="form" method="post">
-      <h1 class="text-center">Registration Form</h1>
+      <h1 class="text-center">Few step away...</h1>
       <!-- Progress bar -->
       <div class="progressbar">
         <div class="progress" id="progress"></div>
