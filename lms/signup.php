@@ -16,6 +16,8 @@
       <?php
       
       require 'partials/_navbar.php';
+      include 'Db/insert.php';
+      
       ?>
     <!---||||||||||||||||||||| NAV BAR|||||||||||||||||||||-->
 
@@ -33,7 +35,7 @@
  <div class="mb-3 col-md-6" >
     <label for="nam" class="form-label">Name</label>
     <input type="name" class="form-control" id="nam" name="nam">
-  
+
   </div>
 
    <div class="mb-3 col-md-6" >

@@ -15,17 +15,14 @@ global $conn;
 
  if(isset($_POST["signup"]))
  {
-        $name = $_POST["nam"];
+         $name = $_POST["nam"];
          $username = $_POST["usrname"];
          $password = $_POST["password"];
          $cpassword = $_POST["cpassword"];
 
-         if($name != preg_match('/^[a-z]*$/i')
-         {
-             echo "Enter letter only :) ";
-         }
 
-     if(isset($_POST["btnemp"]))
+
+     if(isset($_POST["btnemp"]) && preg_match("/^[a-zA-Z'. -]+$/", $name))
      {
          $role = true;
 
@@ -33,6 +30,12 @@ global $conn;
          {
              $sql = "INSERT INTO `user` (`id`, `name`, `email`, `password`,`role`) VALUES (NULL, '$name', '$username', '$password','$role')";
              $result = mysqli_query($conn,$sql);
+
+            sleep(3);
+            require '../login.php';
+            header("Location: ../login.php");
+            exit();
+            ob_flush();
         }
             else{
                 echo "Enter Same Password";
@@ -43,7 +46,7 @@ global $conn;
         
         // Admin //
         
-        else if(isset($_POST["btnadm"]))
+        else if(isset($_POST["btnadm"]) && preg_match("/^[a-zA-Z'. -]+$/", $name))
         {
             $role = false;
 
@@ -51,6 +54,12 @@ global $conn;
             {
                 $sql = "INSERT INTO `user` (`id`, `name`, `email`, `password`,`role`) VALUES (NULL, '$name', '$username', '$password','$role')";
                 $result = mysqli_query($conn,$sql);
+            
+            sleep(3);
+            require '../login.php';
+            header("Location: ../login.php");
+            exit();
+            ob_flush();
             }
             else{
                  echo "Enter Same Password";
@@ -59,19 +68,18 @@ global $conn;
 
         }
         else{
-            echo " Select Your Role :( ";
-            echo "<br>";
+            // echo " Select Your Role :( ";
+            // echo "<br>";
+        echo '<div class="alert alert-danger
+       alert-dismissible fade show" role="alert" id="success-alert">
+      <strong> Enter </strong> Letters only in name field :(
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
         }
 
 
 
-      sleep(3);
-      require '../login.php';
 
-
-      header("Location: ../login.php");
-      exit();
-      ob_flush();
      
  
 }
