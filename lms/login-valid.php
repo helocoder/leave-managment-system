@@ -35,7 +35,8 @@ if(isset($_POST["loglogin"]))
 
          $logname = $row['name'];
          session_start();
-         $_SESSION["loguser"] = "$logname";
+         $_SESSION["username"] = "$username";
+         $password["password"] = "$password";
     
          $roll=$row['role'];
          //echo "$roll";
